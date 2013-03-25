@@ -1,11 +1,11 @@
 require 'resque'
 
 class Napper
-  @queue = :not_queue
+  @queue = :foo
 
   def self.perform
     puts 'sleeping...'
-    sleep 5
+    sleep 1
     puts 'awake!'
   end
 end
@@ -13,6 +13,6 @@ end
 class App
   def call(env)
     Resque.enqueue(Napper)
-    [200, {"Content-Type" => "text/html"}, ["Queuing Motherfucker!"]]
+    [200, {"Content-Type" => "text/html"}, ["Failed workers: #{Resque.info[:failed]}"]]
   end
 end

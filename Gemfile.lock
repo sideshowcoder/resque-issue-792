@@ -10,17 +10,27 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    coderay (1.0.9)
     json (1.7.7)
+    method_source (0.8.1)
     mono_logger (1.0.0)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
+    rake (10.0.3)
     redis (3.0.3)
     redis-namespace (1.2.1)
       redis (~> 3.0.0)
+    slop (3.4.3)
     thor (0.17.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  pry
   rack
+  rake
   resque!
